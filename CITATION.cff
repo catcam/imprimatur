@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use or implement this protocol, please cite it as below."
+type: software
+title: "Imprimatur — Model-Evaluated Competency Certificate Protocol"
+authors:
+  - name: "Nikša Barlović"
+  - name: "Claude Sonnet 4.6"
+    affiliation: "Anthropic"
+repository-code: "https://github.com/catcam/imprimatur"
+license: Apache-2.0
+version: "1.1"
+date-released: "2026-05-02"
+doi: "10.5281/zenodo.19981460"
+abstract: >
+  Imprimatur is an open protocol for model-evaluated competency certification.
+  An AI model evaluates a user through natural interaction and proposes certificates;
+  an independent review model issues or rejects them. Certificates are published
+  to Zenodo with a DOI, emailed as PDF, and verifiable by hash.
+keywords:
+  - AI evaluation
+  - competency certificate
+  - human-AI interaction
+  - verifiable credentials
+  - open protocol

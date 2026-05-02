@@ -5,6 +5,7 @@ Sends certificate to subject via Gmail SMTP.
 Styled like Coursera — certificate as attachment + inline summary.
 """
 
+import os
 import smtplib
 import json
 from email.mime.multipart import MIMEMultipart
@@ -13,8 +14,8 @@ from email.mime.application import MIMEApplication
 from pathlib import Path
 
 
-GMAIL_USER = ""
-GMAIL_APP_PASSWORD = ""
+GMAIL_USER = os.environ.get("IMPRIMATUR_GMAIL_USER", "")
+GMAIL_APP_PASSWORD = os.environ.get("IMPRIMATUR_GMAIL_APP_PASSWORD", "")
 
 EMAIL_HTML = """
 <!DOCTYPE html>
