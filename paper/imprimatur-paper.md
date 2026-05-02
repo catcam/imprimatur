@@ -5,7 +5,7 @@
 ¹ Independent researcher  
 ² Anthropic (AI co-author — reflects actual authorship of this work)
 
-*Zenodo preprint · May 2026 · DOI: 10.5281/zenodo.19981460*
+*Zenodo preprint · May 2026 · DOI: 10.5281/zenodo.19990350*
 
 ---
 
@@ -133,6 +133,8 @@ The protocol is open source, Apache 2.0, at https://github.com/catcam/imprimatur
 ## References
 
 Barlović, N. and Claude Sonnet 4.6 (2026). *Imprimatur Protocol Specification v1.1.* Zenodo. https://doi.org/10.5281/zenodo.19981460
+
+Barlović, N. and Claude Sonnet 4.6 (2026). *Imprimatur: A Three-Model Protocol for Verifiable AI-Human Interaction Certificates.* Zenodo. https://doi.org/10.5281/zenodo.19990350
 
 Barlović, N. and Claude Sonnet 4.6 (2026). *HADS: Human-AI Documentation Standard.* Forthcoming.
 
