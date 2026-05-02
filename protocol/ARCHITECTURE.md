@@ -15,7 +15,7 @@
 │         [User consents]                              │
 │         [User declares identity]                     │
 └────────────────┼────────────────────────────────────┘
-                 │ transcript only
+                 │ evaluation log (HADS-compressed)
                  ↓
 ┌─────────────────────────────────────────────────────┐
 │  REVIEW (isolated)                                   │
@@ -39,9 +39,27 @@
 └─────────────────────────────────────────────────────┘
 ```
 
+## Evaluation Log (HADS-Imprimatur Format)
+
+The working model does not send the raw transcript to the judge — it sends a compressed
+evaluation log built from four HADS-compatible tags:
+
+- **[IMP-REQ]** — user's raw request (verbatim)
+- **[IMP-META]** — compressed summary of model output (replaces full code/text)
+- **[IMP-FAIL]** — exact failure mode that triggered course-correction
+- **[IMP-ITER]** — user's specific correction instruction
+
+This reduces judge token cost by ~85-90% vs. raw transcript while preserving
+the context needed to evaluate iterative refinement and critical evaluation.
+
+The log is built incrementally during the session. The user never sees it being
+constructed — they interact normally. The tagging moment is not disclosed.
+
+See `protocol/EVALUATION_LOG.md` for full tag specifications and examples.
+
 ## Isolation guarantee
 
-The review model receives only the session transcript. It has no:
+The review model receives only the evaluation log. It has no:
 - Prior relationship with the user
 - Context from the working session
 - Knowledge of whether a certificate was expected
