@@ -70,6 +70,7 @@ def build_json(
         "issued_at": now,
         "working_model": working_model,
         "review_model": review_model,
+        "trust_tier": 0,
         "certificates": certs,
         "session_hash": session_hash,
         "doi": doi,
@@ -143,6 +144,9 @@ def build_pdf(cert_json: dict, output_path: str) -> str:
     story.append(Paragraph(
         f"Working model: {cert_json['working_model']} · "
         f"Review model: {cert_json['review_model']}", sub_style))
+    tier = cert_json.get("trust_tier", 0)
+    tier_label = {0: "single session · single model", 1: "multi-session · same model family", 2: "multi-model consensus"}.get(tier, "unknown")
+    story.append(Paragraph(f"Trust tier: {tier} ({tier_label})", small_style))
 
     story.append(Spacer(1, 6 * mm))
     story.append(HRFlowable(width=W, thickness=0.5, color=colors.HexColor("#eeeeee")))
